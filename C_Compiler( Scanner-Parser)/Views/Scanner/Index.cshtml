@@ -1,0 +1,68 @@
+﻿@model C_Compiler__Scanner_Parser_.Models.LexerViewModel
+
+@{
+    ViewData["Title"] = "C Language Lexical Analyzer";
+}
+
+<style>
+    .token-table {
+        margin-top: 20px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .token-table th, .token-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    .token-table th {
+        background-color: #f2f2f2;
+    }
+    .output-container {
+        font-family: monospace;
+        background-color: #333;
+        color: #f2f2f2;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">C Language Lexical Analyzer</h1>
+    <p>Enter C code below to see the lexical analysis result.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Index" method="post">
+            <div class="form-group">
+                <label for="InputCode">C Code:</label>
+                <textarea asp-for="InputCode" class="form-control" rows="15"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Analyze</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.Tokens != null && Model.Tokens.Any())
+{
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2>Lexical Analysis Output</h2>
+            <div class="output-container">
+                @foreach (var token in Model.Tokens)
+                {
+                    <div>@token.ToString()</div>
+                }
+            </div>
+        </div>
+    </div>
+}
+else if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger mt-4" role="alert">
+        @Model.ErrorMessage
+    </div>
+}
