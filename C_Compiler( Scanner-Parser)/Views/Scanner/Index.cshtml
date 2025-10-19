@@ -1,4 +1,4 @@
-﻿@model C_Compiler__Scanner_Parser_.Models.LexerViewModel
+﻿@model C_Compiler__Scanner_Parser_.ViewModels.LexerViewModel
 
 @{
     ViewData["Title"] = "C Language Lexical Analyzer";
@@ -10,14 +10,17 @@
         border-collapse: collapse;
         width: 100%;
     }
-    .token-table th, .token-table td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-    }
-    .token-table th {
-        background-color: #f2f2f2;
-    }
+
+        .token-table th, .token-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .token-table th {
+            background-color: #f2f2f2;
+        }
+
     .output-container {
         font-family: monospace;
         background-color: #333;
