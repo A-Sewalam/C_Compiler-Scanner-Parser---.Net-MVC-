@@ -3,44 +3,116 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - C_Compiler__Scanner_Parser_</title>
+    <title>@ViewData["Title"] - C Compiler Scanner Parser</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/C_Compiler__Scanner_Parser_.styles.css" asp-append-version="true" />
+
+    <style>
+        /* Global Style */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #212529;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #0d6efd !important;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #495057 !important;
+            font-weight: 500;
+            margin-right: 1rem;
+            transition: color 0.2s ease-in-out;
+        }
+
+            .navbar-nav .nav-link:hover,
+            .navbar-nav .nav-link.active {
+                color: #0d6efd !important;
+            }
+
+        /* Main content area */
+        main {
+            padding-top: 20px;
+            padding-bottom: 60px;
+            min-height: 80vh;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #dee2e6;
+            color: #6c757d;
+            font-size: 0.95rem;
+            padding: 15px 0;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+            footer a {
+                color: #0d6efd;
+                text-decoration: none;
+            }
+
+                footer a:hover {
+                    text-decoration: underline;
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">C_Compiler__Scanner_Parser_</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    ⚙️ C Compiler
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Lexer" asp-action="Index">Lexical Analyzer</a>
+                        </li>
+                        <li class="nav-item">
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <div class="container" style="padding-top: 90px;">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="text-center mt-auto">
         <div class="container">
-            &copy; 2025 - C_Compiler__Scanner_Parser_ - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - <strong>C Compiler Scanner Parser - SEWALAM </strong> 
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
