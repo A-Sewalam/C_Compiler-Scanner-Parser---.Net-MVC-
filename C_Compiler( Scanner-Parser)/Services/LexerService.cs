@@ -40,7 +40,7 @@ namespace C_Compiler__Scanner_Parser_.Services
                 }
                 else
                 {
-                    // If no match, advance to avoid infinite loop on unknown characters
+                   
                     tokens.Add(new Token(TokenType.UNKNOWN, codeWithoutComments[position].ToString()));
                     position++;
                 }
@@ -62,13 +62,13 @@ namespace C_Compiler__Scanner_Parser_.Services
                     if (code[i] == '/' && code[i + 1] == '/')
                     {
                         inSingleLineComment = true;
-                        i++; // Skip the second '/'
+                        i++; 
                         continue;
                     }
                     if (code[i] == '/' && code[i + 1] == '*')
                     {
                         inMultiLineComment = true;
-                        i++; // Skip the '*'
+                        i++; 
                         continue;
                     }
                 }
@@ -78,7 +78,7 @@ namespace C_Compiler__Scanner_Parser_.Services
                     if (code[i] == '\n')
                     {
                         inSingleLineComment = false;
-                        result += code[i]; // Preserve newline
+                        result += code[i]; 
                     }
                     continue;
                 }
@@ -88,7 +88,7 @@ namespace C_Compiler__Scanner_Parser_.Services
                     if (i + 1 < code.Length && code[i] == '*' && code[i + 1] == '/')
                     {
                         inMultiLineComment = false;
-                        i++; // Skip the '/'
+                        i++; 
                     }
                     continue;
                 }
@@ -127,7 +127,7 @@ namespace C_Compiler__Scanner_Parser_.Services
                 {
                     if (code[position] == '.')
                     {
-                        if (hasDecimal) break; // Cannot have two decimals
+                        if (hasDecimal) break;
                         hasDecimal = true;
                     }
                     position++;
@@ -143,7 +143,7 @@ namespace C_Compiler__Scanner_Parser_.Services
 
         private bool TryMatchOperator(string code, ref int position, out Token token)
         {
-            // Check for two-character operators first
+         
             if (position + 1 < code.Length)
             {
                 string twoCharOp = code.Substring(position, 2);
@@ -155,7 +155,7 @@ namespace C_Compiler__Scanner_Parser_.Services
                 }
             }
 
-            // Check for one-character operators
+            
             string oneCharOp = code[position].ToString();
             if (_operators.Contains(oneCharOp))
             {
