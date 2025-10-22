@@ -54,8 +54,7 @@ To run this project on your own machine, follow these steps:
 
 2.  **Clone the Repository**:
     ```bash
-    git clone [https://github.com/YourUsername/YourRepositoryName.git](https://github.com/YourUsername/YourRepositoryName.git)
-    cd YourRepositoryName
+    git clone https://github.com/YourUsername/YourRepositoryName.git
     ```
 
 
