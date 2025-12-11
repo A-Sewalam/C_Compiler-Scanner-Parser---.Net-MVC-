@@ -14,6 +14,7 @@ namespace C_Compiler__Scanner_Parser_
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddScoped<ILexerService, LexerService>();
+            builder.Services.AddScoped<IParserService, ParserService>();
 
             var app = builder.Build();
 

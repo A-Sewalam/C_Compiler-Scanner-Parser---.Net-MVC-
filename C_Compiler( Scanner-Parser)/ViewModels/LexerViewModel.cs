@@ -6,6 +6,8 @@ namespace C_Compiler__Scanner_Parser_.ViewModels
     {
         public string? InputCode { get; set; }
         public List<Token>? Tokens { get; set; }
+
+        public string? ParseTreeOutput { get; set; }
         public string? ErrorMessage { get; set; }
 
         public LexerViewModel()

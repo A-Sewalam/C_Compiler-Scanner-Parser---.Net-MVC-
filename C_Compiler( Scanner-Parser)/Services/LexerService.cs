@@ -4,7 +4,7 @@ namespace C_Compiler__Scanner_Parser_.Services
 {
     public class LexerService : ILexerService
     {
-        private readonly HashSet<string> _keywords = new HashSet<string> { "int", "return", "if", "else", "main", "void", "char", "float", "double", "for", "while", "do" };
+        private readonly HashSet<string> _keywords = new HashSet<string> { "int", "return", "if", "else", "void", "char", "float", "double", "for", "while", "do" };
         private readonly HashSet<char> _specialChars = new HashSet<char> { '(', ')', '{', '}', ';', ',' };
         private readonly HashSet<string> _operators = new HashSet<string> { "+", "-", "*", "/", "=", "==", "!=", "<", ">", "<=", ">=" };
 
